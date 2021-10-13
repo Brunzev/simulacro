@@ -1,0 +1,50 @@
+@model SolicitudCompra
+@{
+    ViewData["Title"] = "Registro de Usuarios";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+    
+}
+<h1>@ViewData["Title"]</h1>
+
+<h1>REGISTRO DE PRODUCTO</h1>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-controller="Contacto" asp-action="Formulario" method="post">
+
+    <div class="form-group">
+        <label asp-for="nombre">NOMBRE: </label>
+        <input type="text" asp-for="nombre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="foto">FOTO: </label>
+        <input type="text" asp-for="foto" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="descripcion">DESCRIPCIÓN: </label>
+        <textarea type="text" asp-for="descripcion" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="precio">PRECIO: </label>
+        <input type="text" asp-for="precio" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="celular">CELULAR: </label>
+        <input type="text" asp-for="celular" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="lugar">LUGAR: </label>
+        <input type="text" asp-for="lugar" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="comprador">COMPRADOR: </label>
+        <input type="text" asp-for="comprador" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="categoria">CATEGORIA: </label>
+         <div>
+           @Html.DropDownList("datos" , items , "Selecciona tu categoria")
+       </div>  
+    <button class="btn btn-info">ENVIAR</button>
+
+</form>
